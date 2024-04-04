@@ -10,6 +10,7 @@ public class DiamondKataSolverTests
     [InlineData('@')]
     [InlineData('c')]
     [InlineData('!')]
+    [InlineData('[')]
     public void Solver_IncorrectChar_ShouldThrow(char input)
     {
         //Arrange
@@ -27,6 +28,7 @@ public class DiamondKataSolverTests
     [InlineData('F')]
     [InlineData('G')]
     [InlineData('X')]
+    [InlineData('Z')]
     public void Solver_CorrectChar_ShouldHaveProperLinesCount(char input)
     {
         //Arrange
@@ -108,62 +110,66 @@ J                 J
     }
     
     [Fact]
-    public void Solver_InputX_ShouldPrintDiamond()
+    public void Solver_InputZ_ShouldPrintDiamond()
     {
         //Assert
         var expected =
-@"                       A
-                      B B
-                     C   C
-                    D     D
-                   E       E
-                  F         F
-                 G           G
-                H             H
-               I               I
-              J                 J
-             K                   K
-            L                     L
-           M                       M
-          N                         N
-         O                           O
-        P                             P
-       Q                               Q
-      R                                 R
-     S                                   S
-    T                                     T
-   U                                       U
-  V                                         V
- W                                           W
-X                                             X
- W                                           W
-  V                                         V
-   U                                       U
-    T                                     T
-     S                                   S
-      R                                 R
-       Q                               Q
-        P                             P
-         O                           O
-          N                         N
-           M                       M
-            L                     L
-             K                   K
-              J                 J
-               I               I
-                H             H
-                 G           G
-                  F         F
-                   E       E
-                    D     D
-                     C   C
-                      B B
-                       A";
+@"                         A
+                        B B
+                       C   C
+                      D     D
+                     E       E
+                    F         F
+                   G           G
+                  H             H
+                 I               I
+                J                 J
+               K                   K
+              L                     L
+             M                       M
+            N                         N
+           O                           O
+          P                             P
+         Q                               Q
+        R                                 R
+       S                                   S
+      T                                     T
+     U                                       U
+    V                                         V
+   W                                           W
+  X                                             X
+ Y                                               Y
+Z                                                 Z
+ Y                                               Y
+  X                                             X
+   W                                           W
+    V                                         V
+     U                                       U
+      T                                     T
+       S                                   S
+        R                                 R
+         Q                               Q
+          P                             P
+           O                           O
+            N                         N
+             M                       M
+              L                     L
+               K                   K
+                J                 J
+                 I               I
+                  H             H
+                   G           G
+                    F         F
+                     E       E
+                      D     D
+                       C   C
+                        B B
+                         A";
         
         var result = "";
            
         //Act
-        Action act = () => result = Solver.DiamondKata.Solve('X');
+        Action act = () => result = Solver.DiamondKata.Solve('Z');
 
         //Assert
         act.Should().NotThrow();
