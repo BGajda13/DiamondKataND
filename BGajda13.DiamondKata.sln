@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BGajda13.DiamondKata.Solver", "BGajda13.DiamondKata.Solver\BGajda13.DiamondKata.Solver.csproj", "{5B225441-D941-4E25-91BE-7574570F5EFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BGajda13.DiamondKata.Tests", "BGajda13.DiamondKata.Tests\BGajda13.DiamondKata.Tests.csproj", "{0B84D85B-32BD-4240-9D09-0EF1BB466A8D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B225441-D941-4E25-91BE-7574570F5EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B225441-D941-4E25-91BE-7574570F5EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B225441-D941-4E25-91BE-7574570F5EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B225441-D941-4E25-91BE-7574570F5EFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B84D85B-32BD-4240-9D09-0EF1BB466A8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B84D85B-32BD-4240-9D09-0EF1BB466A8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B84D85B-32BD-4240-9D09-0EF1BB466A8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B84D85B-32BD-4240-9D09-0EF1BB466A8D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
