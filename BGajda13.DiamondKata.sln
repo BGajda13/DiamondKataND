@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BGajda13.DiamondKata.Solver
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BGajda13.DiamondKata.Tests", "BGajda13.DiamondKata.Tests\BGajda13.DiamondKata.Tests.csproj", "{0B84D85B-32BD-4240-9D09-0EF1BB466A8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BGajda13.DiamondKata.ConsoleApp", "BGajda13.DiamondKata.ConsoleApp\BGajda13.DiamondKata.ConsoleApp.csproj", "{E9A72E13-D6D8-4CCE-BCAD-5899631FD806}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{0B84D85B-32BD-4240-9D09-0EF1BB466A8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B84D85B-32BD-4240-9D09-0EF1BB466A8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B84D85B-32BD-4240-9D09-0EF1BB466A8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9A72E13-D6D8-4CCE-BCAD-5899631FD806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9A72E13-D6D8-4CCE-BCAD-5899631FD806}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9A72E13-D6D8-4CCE-BCAD-5899631FD806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9A72E13-D6D8-4CCE-BCAD-5899631FD806}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
