@@ -5,65 +5,72 @@ namespace BGajda13.DiamondKata.Solver;
 public static class DiamondKata
 {
     private const char CharA = 'A';
-    private const char CharSpace = ' ';
 
     public static string Solve(char input)
     {
         CheckInput(input);
-        return PrepareString(input);
+        
+        var numberOfLevels = CalculateNumberOfLevels(input);
+        var levelsSequence = GenerateLevelsSequence(input);
+        var charsWithPaddings = CalculatePaddings(levelsSequence, numberOfLevels);
+
+        var levels = charsWithPaddings
+            .Select(x => BuildLevel(x.Item1, x.left, x.inner)).ToList()
+            .MirrorVertically()
+            ;
+
+        return string.Join(Environment.NewLine, levels);
     }
-    
+
     private static void CheckInput(char input)
     {
-        if (input < 65 || input > 90)
+        if (input is < 'A' or > 'Z')
         {
             throw new ArgumentOutOfRangeException(nameof(input));
         }
     }
     
-    private static string PrepareString(char input)
+    public static int CalculateNumberOfLevels(char input)
     {
-        var inputCharDistanceToCharA = input - CharA;
-        
-        var result = new List<StringBuilder>();
-        var currentChar = input;
-        
-        do
-        {
-            var line = new StringBuilder();
-            var currentCharDistanceToCharA = currentChar - CharA;
-            var printableChar = (char)( input - currentCharDistanceToCharA);
-            
-            // Adding left padding
-            for (var i = 0; i < currentCharDistanceToCharA; i++)
-            {
-                line.Append(CharSpace);
-            }
-            
-            line.Append(printableChar);
-    
-            // Adding inner space 
-            for (var i = 0; i < 2 * (inputCharDistanceToCharA - currentCharDistanceToCharA) - 1; i++)
-            {
-                line.Append(CharSpace);
-            }
+        return input - CharA + 1;
+    }
 
-            if (inputCharDistanceToCharA - currentCharDistanceToCharA > 0)
-            {
-                line.Append(printableChar);
-            }
-    
-            currentChar = (char)(currentChar - 1);
-            result.Add(line);
-        } while (currentChar >= CharA);
-
-        if (result.Count > 1)
+    public static IEnumerable<char> GenerateLevelsSequence(char input)
+    {
+        var currentChar = CharA;
+        
+        while (currentChar < input)
         {
-            result.AddRange(result.Take(result.Count - 1).Reverse());
+            yield return currentChar;
+            currentChar++;
         }
 
-        var final = string.Join(Environment.NewLine, result.Select(sb => sb.ToString()));
+        yield return input;
+    }
 
-        return final;
+    public static IEnumerable<(char, int left, int inner)> CalculatePaddings(IEnumerable<char> input, int numberOfLevels)
+    {
+        return input.Select((c, i) => (c, left: numberOfLevels - i - 1, inner: 2 * i - 1));
+    }
+    
+    public static string BuildLevel(char c, int leftPadding, int innerSpace)
+    {
+        var sb = new StringBuilder(c.ToString().PadLeft(leftPadding + 1));
+        
+        if (innerSpace <= 0)
+        {
+            return sb.ToString();
+        }
+
+        sb.Append(c.ToString().PadLeft(innerSpace + 1));
+
+        return sb.ToString();
+    }
+    
+    public static List<T> MirrorVertically<T>(this List<T> levels)
+    {
+        levels.AddRange(levels.Take(levels.Count - 1).Reverse());
+
+        return levels;
     }
 }
